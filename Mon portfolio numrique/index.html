@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEA Services</title>
+    <meta name="description" content="PEA Technologies, à votre service pour votre transformation digitale">
+    <link rel="stylesheet" href="landing.css">
+    <script src="scriptform.js" defer></script>
+    <script src="landing.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="2.png" alt="Logo PEA" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="projets.html">Mes projets</a></li>
+                <li><a href="a_propos.html">A propos</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <button id="dark-mode">Mode Nuit</button>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+            <img src="HERO.avif" alt="image bureaux PEA" width="100%">
+        </div>
+        <section id="hero">
+            <h2 class="section-title">Bienvenue sur mon prtfolio numérique !</h2>
+            <p>
+                Je suis <strong>Prince Eloi Babatounde AÏKO</strong>, un passionné du digital, du foot, des mangas et animés, inspecteur du travail
+                et spécialiste des droits humains et démocratie de formation. 
+                Je travaille avec des entreprises, propriétaires de sites web et agences digitales 360 depuis un peu plus de 4ans
+                et c'est toujours un pur plaisir de donner du mien pour la concrétisation d'une vision.
+            </p>
+            <p>
+                J'aide les marques et les entreprises à résoudre tous leurs problèmes en rapport au digital. 
+                Je conçois des solutions digitales, optimise des process pour une meilleure gestion des ressources des entreprises. 
+                Envie de passer au digital ou sans casse-tête ? 
+                Vous désirez roder vos équipes à l'utilisation des dernière technologies ? Contactez-moi !
+            </p><br><br><br>
+            <button class="contact-bouton">Contactez-moi</button>
+        </section>
+
+
+
+        <section id="caracteristiques">
+            <h2 class="section-title">Mes valeurs</h2>
+            <div class="container1">
+                <div class="caracCarte">
+                    <h3>Passion</h3>
+                    <p>
+                        Je crois fermement que tout part d'une passion. 
+                        Je vis et je travaille par passion, ce qui transforme chaque challenge 
+                        qui se présente en une expérience unique.
+                    </p>
+                </div>
+                <div class="caracCarte">
+                    <h3>Sécurité</h3>
+                    <p>Avec nous, vos données sont protégées par les meilleurs protocoles.</p>
+                </div>
+                <div class="caracCarte">
+                    <h3>Design</h3>
+                    <p>Nous intégrons le design dans tous nos process pour nous assurer de concevoir des solutions sur-mesures pour vous.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences">
+            <div class="container-skills">
+                <h2 class="section-title">Mes domaines de compétences</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <img id="skill-icon" src="IconoirDesignNibSolid.png" alt="">
+                        <h3>Design & UI/UX</h3>
+                        <ul>
+                            <li>Design Thinking</li>
+                            <li>Maquetage Figma</li>
+                            <li>Prototypage</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <img id="skill-icon" src="LogosWebDev.png" alt="">
+                        <h3>Développement Web</h3>
+                        <ul>
+                            <li>HTML5 / CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card">
+                        <img id="skill-icon" src="IconParkOther.png" alt="">
+                        <h3>Outils & Autres</h3>
+                        <ul>
+                            <li>Data</li>
+                            <li>Méthodes Agiles</li>
+                            <li>Gestion de projet</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h1 id="form-titre">Contactez-nous</h1>
+                <form action="" method="">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nom">Nom d'utilisateur</label><br>
+                            <input type="text" name="Nom_utilisateur" id="nom" placeholder="Saisissez votre Nom & Prenoms">
+                            <span id="erreur-nom" style="color: #e74c3c; display: block; font-size: 0.8em;"></span>
+                        </div>
+                    
+
+                        <div class="form-group">
+                            <label for="email">E-mail</label><br>
+                            <input type="email" name="email" id="email" placeholder="Saisissez votre adresse e-mail">
+                            <span id="erreur-email" style="color: #e74c3c; display: block; font-size: 0.8em;"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sujet">Laissez-nous un message</label>
+                        <select name="sujet_demande" id="sujet">
+                            <option value="">--Choisissez une option--</option>
+                            <option value="support">Support technique</option>
+                            <option value="devis">Demande de devis</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div><br>
+
+                    <div class="form-group">
+                        <textarea name="message_utilisateur" id="message" placeholder="Ecrire un message"></textarea>
+                    </div>
+
+            
+        
+                    <div>
+                        <input id="btn-submit" type="submit" value="Envoyer">
+                    </div>
+                </form>
+                    <div id="message-succes" style="color: #27ae60; font-weight: bold;"></div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>PEA Technologies</h4>
+                <p>Votre partenaire digital pour des solutions sur mesure.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Liens Rapides</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email : princeelrey01@gmail.com</p>
+                <p>Lieu : Cotonou, Bénin</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 PEA Technologies - Tous droits réservés.</p>
+            </div>
+        </div>
+        
+    </footer>
+</body>
+</html>

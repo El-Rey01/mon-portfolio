@@ -1,0 +1,339 @@
+/*initailisation, suppression des marges automatiquement mises pour les sites web*/
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Aide à mieux calculer les largeurs */
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden; /* Évite les barres de défilement horizontales bizarres */
+}
+
+/* 1. Définition des variables de couleurs (Thème Clair par défaut) */
+:root {
+    --bg-color: #f0f7ff;          
+    --text-color: #001a33;        
+    --header-bg: #0e549a;         
+    --accent-color: #ff8c00;      
+    --card-bg: #ffffff;
+}
+
+/* 2. Styles pour le Mode Nuit (Classe appliquée au body) */
+body.dark-mood {
+    --bg-color: #001122;          
+    --text-color: #e6f2ff;        
+    --header-bg: #000811;         
+    --accent-color: #ffd700;      
+    --card-bg: #002244;           
+}
+
+/* 3. Bouton Mode Nuit */
+#dark-mode {
+    background-color: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+/*Bouton Contactez-moi*/
+.contact-bouton {
+    background-color: #0e549a;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.contact-bouton:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+/* 4. Application des styles
+1. ENTETE */
+header {
+    display: flex;                /* Active le mode Flexbox */
+    justify-content: space-between; /* Pousse le logo à gauche et le nav à droite */
+    align-items: center;        /* Aligne verticalement au centre */
+    padding: 10px;           /* Ajoute un peu d'espace sur les côtés */
+    position: sticky; 
+    top: 0;
+}
+
+.logo {
+    height: 100px;               /* Ajuste la taille de ton logo PEA */
+    width: auto;
+}
+
+nav ul {
+    display: flex;              /* Aligne les <li> horizontalement */
+    list-style: none;           /* Retire les points/puces */
+    margin: 0;
+    padding: 0;
+    gap: 20px;                  /* Crée de l'espace entre chaque lien */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;      /* Retire le soulignement */
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color); /* Utilise la couleur d'accentuation (Corail/Or) */
+}
+
+header {
+    background-color: var(--header-bg);
+    color: white;
+}
+
+/*Footer*/
+.site-footer {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 40px 0 20px 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Pour que ce soit joli sur mobile */
+    max-width: 1200px;
+    margin: 0 auto; /* Centre le contenu à l'intérieur du footer large */
+    padding: 0 20px;
+}
+
+.footer-section {
+    margin-bottom: 20px;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 30px;
+    padding-top: 20px;
+    font-size: 0.9rem;
+}
+
+/* CORPS et CONTENU*/
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s; /* Transition douce lors du changement */
+}
+
+/*Création et animation des boxs (pour les cartes)*/
+.caracCarte {
+    background-color: var(--card-bg);
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Bordure plus discrète */
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.caracCarte:hover {
+    transform: scale(1.03); /* Effet de zoom léger au survol */
+}
+
+/*responsivité des boxs*/
+.container1 {
+    display: grid;
+    /* Crée automatiquement des colonnes de 300px minimum */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centre la grille dans la page */
+    padding: 20px;
+}
+
+@media (min-width : 768px) {
+        
+    .container1 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .caracCarte {
+        flex: 1;
+        min-width: 300px; 
+    }
+}
+
+/*Essayons de centrer les autres éléments de la page*/
+#hero {
+    display: flex;
+    flex-direction: column; /* Aligne les éléments (h2, p) verticalement */
+    align-items: center;    /* Centre horizontalement */
+    justify-content: center;/* Centre verticalement (si tu donnes une hauteur) */
+    text-align: center;     /* Centre le texte à l'intérieur des balises */
+    padding: 100px 20px;    /* Donne de la hauteur à la section */
+    min-height: 60vh;       /* Prend 40% de la hauteur de l'écran */
+}
+
+/*Travaillons la mise en forme des compétences*/
+#competences {
+    padding: 80px 20px;
+    background-color: var(--bg-color); /* Utilise ta variable de fond */
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    /* Crée 3 colonnes sur PC, 1 sur mobile */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Petit effet au survol */
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+#skill-icon {
+    
+    height: 50px;               /* Ajuste la taille de ton logo PEA */
+    width: auto;
+    
+}
+
+#img-projet {
+    height: 20rem;
+    max-width: 400px;
+    width: auto;
+    border-radius: 18px;
+}
+
+.skill-card h3 {
+    margin-bottom: 15px;
+    color: var(--accent-color);
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-card ul li {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/*Travaillons la mise en forme du formulaire de contact sur la page*/
+
+.container {
+    max-width: 600px; /* Un peu plus large pour accommoder les 2 colonnes */
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+}
+
+/* Organisation en ligne pour Nom et Email */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+    gap: 20px; /* Espace entre les deux champs */
+}
+
+/* Sur mobile, on repasse sur une seule colonne */
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Espacement général des groupes */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input, textarea, select {
+    padding: 12px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: inherit;
+}
+
+/* Bouton Envoyer stylisé */
+#btn-submit {
+    background-color: var(--header-bg);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    display: block;      /* Permet d'utiliser les marges automatiques */
+    margin: 20px auto 0; /* Haut: 20px, Gauche/Droite: auto (centre), Bas: 0 */
+    padding: 12px 40px;  /* On lui donne une largeur fixe par le padding */
+    width: fit-content;  /* Il ne prend que la largeur de son texte */
+}
+
+#btn-submit:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.2);
+}
+
+#form-titre {
+    text-align: center;
+    margin-bottom: 30px; /* Ajoute un peu d'espace avec les champs */
+    color: var(--header-bg);
+    width: 100%;
+}
